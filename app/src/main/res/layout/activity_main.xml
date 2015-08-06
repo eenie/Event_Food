@@ -1,0 +1,137 @@
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/toolbar" />
+
+
+
+
+    <android.support.v4.widget.DrawerLayout
+
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/rootLayout"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/text_acti_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="#F5F5F5"
+                    android:text="热门推荐"
+                    android:textSize="20sp" />
+
+
+                <GridView
+                    android:id="@+id/food_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:numColumns="2"
+                    >
+
+
+                </GridView>
+
+            </LinearLayout>
+
+
+
+
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fabBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:src="@drawable/star1"
+
+                android:scaleType="fitXY"
+                android:layout_margin="0.1dp" />
+
+        </android.support.design.widget.CoordinatorLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="start"
+            android:background="#ffffff" >
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/edit_shop"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+
+                        android:enabled="false"
+                        android:hint="店铺" />
+
+                    <Button
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imageButton"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignBottom="@id/edit_shop"
+                        android:layout_alignParentEnd="false"
+                        android:layout_alignParentBottom="false"
+                        android:layout_alignParentTop="true"
+                        android:text="搜索"
+
+
+                        android:background="@drawable/ic_edit_username" />
+
+
+                </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+            <ListView
+                android:layout_marginTop="5dp"
+                android:id="@+id/shop_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                >
+
+
+            </ListView>
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>
+
+
+

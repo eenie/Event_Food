@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="9">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="菜品信息"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:background="#2196F3"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btn_collect"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:textColor="#ffffff"
+            android:nestedScrollingEnabled="true"
+            android:background="#2196F3" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_back"
+            android:text="返回"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="false"
+            android:background="#2196F3"
+            android:textColor="#ffffff" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView"
+                android:src="@drawable/ic_default_food"
+                android:scaleType="fitXY"
+                android:layout_margin="10dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f5f5f5"
+                android:layout_margin="10dp"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/text_prince"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="价格￥9"
+                    android:textSize="30sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="评价：4.9"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/text_valuesation"
+                    android:layout_marginTop="10dp" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/scrollView"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="原材料"
+                        android:textSize="25sp"
+                        android:id="@+id/text_mater" />
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginRight="-10dp"
+            android:layout_weight="8" >
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="立即预订"
+                android:id="@+id/btn_call"
+                android:layout_alignParentBottom="true"
+                android:background="#2196F3"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="个人中心"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:background="#2196F3"
+            android:textColor="#ffffff" />
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_persion_back"
+            android:text="返回"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="false"
+            android:background="#2196F3"
+            android:textColor="#ffffff" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f9f9f9"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/imageView3"
+            android:src="@drawable/head"
+            android:scaleType="fitXY"
+            android:layout_margin="20dp"
+            android:layout_alignParentLeft="false" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="false"
+            android:layout_alignBottom="@+id/imageView3"
+            android:layout_toRightOf="@+id/imageView3"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="UserName"
+                android:textSize="20sp"
+                android:gravity="bottom"
+                android:id="@+id/text_user_name" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="TangHaibin@qq.com"
+                android:id="@+id/textView7"
+                android:singleLine="true" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="我的收藏"
+            android:id="@+id/btn_mycollect"
+            android:layout_margin="10dp"
+            android:background="#2196F3"
+            android:textColor="#f5f5f5"
+            android:textSize="20sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="退出登录"
+            android:id="@+id/btn_exit"
+            android:layout_margin="10dp"
+            android:background="#2196F3"
+            android:textColor="#f5f5f5"
+            android:textSize="20sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="支持我们"
+            android:id="@+id/btn_about"
+            android:layout_margin="10dp"
+            android:background="#2196F3"
+            android:textColor="#f5f5f5"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
