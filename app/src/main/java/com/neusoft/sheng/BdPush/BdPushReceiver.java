@@ -22,7 +22,7 @@ public class BdPushReceiver extends PushMessageReceiver {
 
     @Override
     public void onUnbind(Context context, int i, String s) {
-
+        System.out.println("解除绑定");
     }
 
     @Override
