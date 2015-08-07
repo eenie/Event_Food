@@ -28,4 +28,12 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:+'
     compile files('src/main/libs/YoumiSdk_v5.1.0_2015-04-01.jar')
     compile files('src/main/libs/pushservice-4.5.1.8.jar')
+    compile 'com.github.recruit-lifestyle:WaveSwipeRefreshLayout:1.1'
+}
+
+
+repositories {
+    maven {
+        url "https://jitpack.io"
+    }
 }

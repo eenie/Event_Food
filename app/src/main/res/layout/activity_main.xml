@@ -27,12 +27,19 @@
             android:layout_height="match_parent">
 
 
+    <jp.co.recruit_lifestyle.android.widget.WaveSwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_swipe">
 
-            <LinearLayout
+    <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 android:orientation="vertical">
+
+
+
                 <TextView
                     android:id="@+id/text_acti_title"
                     android:layout_width="match_parent"
@@ -41,8 +48,6 @@
                     android:background="#F5F5F5"
                     android:text="热门推荐"
                     android:textSize="20sp" />
-
-
                 <GridView
                     android:id="@+id/food_list"
                     android:layout_width="match_parent"
@@ -53,9 +58,14 @@
 
                 </GridView>
 
+
+
+
+
+
             </LinearLayout>
 
-
+    </jp.co.recruit_lifestyle.android.widget.WaveSwipeRefreshLayout>
 
 
 

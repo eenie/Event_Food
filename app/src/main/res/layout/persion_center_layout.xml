@@ -111,6 +111,13 @@
             android:textColor="#f5f5f5"
             android:textSize="20sp" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/btn_wave"
+            android:layout_gravity="center_horizontal"/>
+
     </LinearLayout>
 
 

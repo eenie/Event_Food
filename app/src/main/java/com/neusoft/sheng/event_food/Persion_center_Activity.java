@@ -27,7 +27,7 @@ public class Persion_center_Activity extends Activity implements View.OnClickLis
         PointsEarnNotify {
 
 
-    Button btn_persion_back, btn_mycollect, btn_exit, btn_about;
+    Button btn_persion_back, btn_mycollect, btn_exit, btn_about,btn_wave;
     TextView text_user_name;
     String user_name;
 
@@ -63,6 +63,10 @@ public class Persion_center_Activity extends Activity implements View.OnClickLis
         btn_mycollect = (Button) findViewById(R.id.btn_mycollect);
         btn_exit = (Button) findViewById(R.id.btn_exit);
         btn_about = (Button) findViewById(R.id.btn_about);
+        btn_wave=(Button)findViewById(R.id.btn_wave);
+
+
+
         text_user_name = (TextView) findViewById(R.id.text_user_name);
 
 
@@ -74,6 +78,7 @@ public class Persion_center_Activity extends Activity implements View.OnClickLis
         btn_exit.setOnClickListener(this);
         btn_mycollect.setOnClickListener(this);
         btn_about.setOnClickListener(this);
+        btn_wave.setOnClickListener(this);
 
     }
 
@@ -114,7 +119,7 @@ public class Persion_center_Activity extends Activity implements View.OnClickLis
     @Override
     public void onClick(View view) {
 
-
+        Intent intent;
         switch (view.getId()) {
             case R.id.btn_persion_back:
                 //finish();
@@ -193,7 +198,7 @@ public class Persion_center_Activity extends Activity implements View.OnClickLis
                 break;
 
             case R.id.btn_mycollect:
-                Intent intent = new Intent(Persion_center_Activity.this,
+                 intent = new Intent(Persion_center_Activity.this,
                         Collect_Activity.class);
                 intent.putExtra("user_name", user_name);
                 startActivity(intent);
@@ -205,6 +210,9 @@ public class Persion_center_Activity extends Activity implements View.OnClickLis
             case R.id.btn_about:
 
                 OffersManager.getInstance(this).showOffersWall();
+                break;
+            case R.id.btn_wave:
+
                 break;
 
 
