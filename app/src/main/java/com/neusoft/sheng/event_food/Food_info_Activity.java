@@ -1,5 +1,6 @@
 package com.neusoft.sheng.event_food;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,6 +9,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
@@ -34,6 +37,7 @@ public class Food_info_Activity extends Activity {
     AssetManager assetManager;
     String phone;
 
+    View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,4 +147,36 @@ public class Food_info_Activity extends Activity {
     }
 
 
+    @Override
+    public void finish() {
+        super.finish();
+
+         view=findViewById(R.id.food_info_linearlayout);
+        ActivityOptionsCompat options =
+                ActivityOptionsCompat.makeScaleUpAnimation(view, //The View that the new activity is animating from
+                        (int)view.getWidth()/2, (int)view.getHeight()/2, //拉伸开始的坐标
+                        0, 0);//拉伸开始的区域大小，这里用（0，0）表示从无到全屏
+
+        startNewAcitivity(options);
+
+
+    }
+
+
+    private void startNewAcitivity(ActivityOptionsCompat options) {
+
+        Intent intent = new Intent();
+
+intent.setClass(getApplicationContext(),MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        ActivityCompat.startActivity(Food_info_Activity.this, intent, options.toBundle());
+    }
+
+
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        System.out.println("onNewIntent");
+    }
 }

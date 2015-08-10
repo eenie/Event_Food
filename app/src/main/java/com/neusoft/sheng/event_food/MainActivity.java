@@ -18,6 +18,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
@@ -88,6 +89,31 @@ public class MainActivity extends ActionBarActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         rootLayout = (CoordinatorLayout) findViewById(R.id.rootLayout);
         food_list=(GridView)findViewById(R.id.food_list);
+
+
+        food_list.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                System.out.println("滚动状态"+scrollState);
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+                System.out.println("在滚动的时候");
+                System.out.println(firstVisibleItem);
+                System.out.println(visibleItemCount);
+                System.out.println(totalItemCount);
+
+
+            }
+        });
+
+
+
+
+
+
         text_acti_title=(TextView)findViewById(R.id.text_acti_title);
 
         shop_list = (ListView) findViewById(R.id.shop_list);
@@ -111,7 +137,7 @@ public class MainActivity extends ActionBarActivity {
         mWaveSwipeRefreshLayout.setOnRefreshListener(new WaveSwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                // Do work to refresh the list here.
+
                 new Task().execute();
             }
         });
@@ -169,6 +195,7 @@ public class MainActivity extends ActionBarActivity {
 
 
                 food_list.setAdapter(food_listview_adapter);
+
 
 
                 text_acti_title.setText(((TextView) view.findViewById(R.id.text_shop_name)).getText());
@@ -351,9 +378,21 @@ public class MainActivity extends ActionBarActivity {
         @Override protected void onPostExecute(String[] result) {
             // Call setRefreshing(false) when the list has been refreshed.
             mWaveSwipeRefreshLayout.setRefreshing(false);
+
+
             super.onPostExecute(result);
         }
     }
+
+
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        System.out.println("onNewIntent");
+    }
+
+
 
 }
 

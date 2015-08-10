@@ -1,12 +1,15 @@
 package com.neusoft.sheng.event_food_adapter;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -115,10 +118,17 @@ public class Food_Listview_adapter extends BaseAdapter {
 
 
             if (view.getId() != R.id.btn_item_collect) {
-                Intent intent = new Intent();
-                intent.putExtra("food", food_infos.get(i));
-                intent.setClass(context, Food_info_Activity.class);
-                context.startActivity(intent);
+
+
+                ActivityOptionsCompat options =
+                        ActivityOptionsCompat.makeScaleUpAnimation(view, //The View that the new activity is animating from
+                                (int)view.getWidth()/2, (int)view.getHeight()/2, //拉伸开始的坐标
+                                0, 0);//拉伸开始的区域大小，这里用（0，0）表示从无到全屏
+
+                startNewAcitivity(options,i);
+
+
+
             } else {
                 Collect collect = new Collect(food_infos.get(i).getFood_id(), context);
                 collect.addCollect();
@@ -134,5 +144,17 @@ public class Food_Listview_adapter extends BaseAdapter {
         ImageView text_food_pic;
         Button btn_item_collect;
     }
+
+
+
+    private void startNewAcitivity(ActivityOptionsCompat options,int i) {
+
+        Intent intent = new Intent(context, Food_info_Activity.class);
+        intent.putExtra("food", food_infos.get(i));
+
+
+        ActivityCompat.startActivity((Activity) context, intent, options.toBundle());
+    }
+
 
 }
